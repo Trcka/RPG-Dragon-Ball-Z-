@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 
  var goku = {
     healthPoints:700,
@@ -25,12 +27,27 @@ console.log(goku.counter);
 
 //pick a char, move char
 var fighterPicked = false;
-$(".btn").on("click", function(){
+function pickFighter() {
   if(fighterPicked===false){
-  $(".hp").text(this.value);
-  console.log((this.value).healthPoints)
+    var hero = $(event.target)
+    var source = $(event.target).attr("src");
+    console.log(source)
+    hero.hide();
+    console.log(event.target);
+    $(".name").text(hero.attr("value"))
+    $(".usersFighter").attr("src",source)
+    fighterPicked=true;
 
-}
+};
+
+};
+
+
+
+
+$(".btn").on("click",function(){
+pickFighter()
+
 });
 
 
@@ -43,3 +60,4 @@ $(".btn").on("click", function(){
 
 
 
+});
