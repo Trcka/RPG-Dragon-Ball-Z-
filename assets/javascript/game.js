@@ -26,9 +26,9 @@ console.log(goku.counter);
 //ending of Z-fighters var
 
 //pick a char, move char
-var fighterPicked = false;
+var lock = false;
 function pickFighter() {
-  if(fighterPicked===false){
+  if(lock===false){
     var hero = $(event.target)
     var source = $(event.target).attr("src");
     console.log(source)
@@ -36,20 +36,35 @@ function pickFighter() {
     console.log(event.target);
     $(".name").text(hero.attr("value"))
     $(".usersFighter").attr("src",source)
-    fighterPicked=true;
-
+    lock=true;
+console.log(lock)
+  };
 };
 
+function pickOpponet() {
+  if(lock===true){
+    var opponet = $(event.target)
+    var source = $(event.target).attr("src");
+    console.log(source)
+    opponet.hide();
+    console.log(event.target);
+    $(".opName").text(opponet.attr("value"))
+    $(".opponet").attr("src",source)
+    console.log(lock)
+  };
 };
 
+function fight(){
+
+};
 
 
 
 $(".btn").on("click",function(){
-pickFighter()
+pickFighter();
+pickOpponet();
 
 });
-
 
 
 
