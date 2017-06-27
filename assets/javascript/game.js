@@ -1,27 +1,29 @@
 $(document).ready(function() {
 
-
- var goku = {
+var fighter ={
+  goku : {
     healthPoints:700,
     attackPoints:150,
     counter:175
-  }
-var vegeta = {
+  },
+ vegeta : {
     healthPoints:500,
     attackPoints:200,
     counter:200
-  }
- var gohan = {
+  },
+ gohan : {
     healthPoints:1000,
     attackPoints:100,
     counter:150
-  }
-var  yamcha = {
+  },  yamcha : {
     healthPoints:300,
     attackPoints:10,
     counter:10
   }
-console.log(goku.counter);
+}
+  var yourHealth;
+  var opponentHealth;
+//fighter.goku, 
 
 //ending of Z-fighters var
 
@@ -29,50 +31,48 @@ console.log(goku.counter);
 var lock = false;
 function pickFighter() {
   if(lock===false){
-    var hero = $(event.target)
-    var source = $(event.target).attr("src");
-    console.log(source)
-    hero.hide();
-    console.log(event.target);
-    $(".name").text(hero.attr("value"))
-    $(".usersFighter").attr("src",source)
+  	var userHero = $(event.target);
+  	var sourceHero = userHero.src;
+    var heroID = userHero[0].id;
+    var hero = fighter[heroID];
+    userHero.hide();
+    $(".name").text(heroID);
+    $(".usersFighter").attr("src", sourceHero);
+    console.log(heroID);
     lock=true;
-console.log(lock)
+    console.log($(event.log))
+    console.log(event.log)
+    
+
   };
 };
 
-function pickOpponet() {
+function pickOpponent() {
   if(lock===true){
-    var opponet = $(event.target)
-    var source = $(event.target).attr("src");
-    console.log(source)
-    opponet.hide();
-    console.log(event.target);
-    $(".opName").text(opponet.attr("value"))
-    $(".opponet").attr("src",source)
-    console.log(lock)
+    var opponent = $(event.target);
+    var source = opponent.src;
+    var opponentID = opponent[0].id;
+    var opponentHero = fighter[opponentID];
+    opponent.hide();
+    //console.log(event.target);
+    $(".opName").text(opponentID);
+    $(".opponent").attr("src", source);
+    canFight=true;
+    console.log(opponentID);
   };
 };
+var canFight= false;
+$("#fight").on("click",function(){
+  // if(canFight===true){
+  // 	var fighter=fighter[this.id];
+  	
 
-function fight(){
-
-};
-
-
+  	});
 
 $(".btn").on("click",function(){
 pickFighter();
-pickOpponet();
+pickOpponent();
+
 
 });
-
-
-
-
-
-
-
-
-
-
 });
