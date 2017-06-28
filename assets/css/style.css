@@ -8,7 +8,13 @@ body{
   height:250px;
   width: auto;
 }
-.container img{
+img{
+  height:300px;
+  width:250px;
+  margin: 10px 15px;
+
+}
+.aura img{
   height:300px;
   width:250px;
   margin: 10px 15px;
@@ -16,4 +22,17 @@ body{
   background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+h1 {
+	background-color: #333;
+	border: solid 2px #ff0000;
+}
+
+#fight{
+	font-size: 30px;
+	padding-left: 10px;
+	background-color: #ff0000;
+}
+h2 {
+	font-size: 50px;
 }
