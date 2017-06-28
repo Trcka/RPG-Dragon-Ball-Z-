@@ -12,4 +12,8 @@ body{
   height:300px;
   width:250px;
   margin: 10px 15px;
+  background: url(../images/aura.gif);
+  background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
 }
